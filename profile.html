@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Konnectz</title>
+    <link rel="stylesheet" href="css/cssofhomepage.css" />
+    <link rel="stylesheet" href="css/fontawesome.css" />
+    <link rel="stylesheet" href="css/all.css" />
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+    ></script>
+
+    <script type="text/javascript" src="js/fontawesome.js"></script>
+    <script type="text/javascript" src="js/all.js"></script>
+  </head>
+
+  <body>
+    <div class="bigContainer">
+      <div class="Logo">
+        <div class="leftLogo">
+          <img src="img\logo.png" width="150" height="150" />
+        </div>
+        <div class="rightLogo">
+          <div class="rightLogoContent">
+            <a href="/index.html" class="people">People</a>
+            <a href="/posts.html" class="post">Post</a>
+            <input
+              type="text"
+              placeholder="Search people or posts..."
+              class="box"
+            />
+            <button class="search">Search</button>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="container">
+        <div class="leftMiddle">
+          <div class="leftImage"></div>
+          <div class="imageName">
+
+          </div>
+          <div class="latestPost">Latest Post</div>
+      
+        </div>
+        <div class="content" id="content">
+          <div class="topContent" id="topContent">
+          
+            
+            </div>
+
+            <div class="postByUserName">
+            
+            </div>  
+
+            
+
+            
+
+           
+
+            
+
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <div class="foot">
+        <footer>copyright@2021</footer>
+      </div>
+    </div>
+    <script src="/js/main.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      GetUserFullDetails();
+      GetPostsByUserID();
+       GetUserDetail();
+       GetLatestPostsByUserId();
+    </script>
+  </body>
+</html>
