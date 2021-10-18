@@ -1,0 +1,52 @@
+CONNECT dummyapi.io:443 HTTP/1.1
+Host: dummyapi.io:443
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36
+
+A SSLv3-compatible ClientHello handshake was found. Fiddler extracted the parameters below.
+
+Version: 3.3 (TLS/1.2)
+Random: 6C FC 05 7C 38 8D BE DB 38 35 89 E0 20 1A 46 A8 B0 01 29 D5 79 D3 4F 01 F6 DA B2 A1 B7 9A C2 97
+"Time": 09-Dec-35 04:21:24 AM
+SessionID: 01 5C D6 E6 B6 23 C7 CC B8 2C FB 1D FC DF B7 53 13 67 BA AF B5 78 6A DF 6C 76 B6 E2 CD 88 BA 87
+Extensions: 
+	grease (0xfafa)	empty
+	server_name	dummyapi.io
+	extended_master_secret	empty
+	renegotiation_info	00
+	supported_groups	grease [0x2a2a], x25519 [0x1d], secp256r1 [0x17], secp384r1 [0x18]
+	ec_point_formats	uncompressed [0x0]
+	SessionTicket	empty
+	ALPN		h2, http/1.1
+	status_request	OCSP - Implicit Responder
+	signature_algs	ecdsa_secp256r1_sha256, rsa_pss_rsae_sha256, rsa_pkcs1_sha256, ecdsa_secp384r1_sha384, rsa_pss_rsae_sha384, rsa_pkcs1_sha384, rsa_pss_rsae_sha512, rsa_pkcs1_sha512
+	SignedCertTimestamp (RFC6962)	empty
+	key_share	00 29 2A 2A 00 01 00 00 1D 00 20 A6 44 EB BE 61 C4 ED 9D F6 8A 11 46 EF 3E 7C 80 85 29 DD AE 82 A9 55 73 A9 51 DA FD 43 A5 55 79
+	psk_key_exchange_modes	01 01
+	supported_versions	grease [0xdada], Tls1.3, Tls1.2, Tls1.1
+	0x001b		02 00 02
+	0x4469		00 03 02 68 32
+	grease (0x3a3a)	00
+	padding		200 null bytes
+Ciphers: 
+	[0A0A]	Unrecognized cipher - See https://www.iana.org/assignments/tls-parameters/
+	[1301]	TLS_AES_128_GCM_SHA256
+	[1302]	TLS_AES_256_GCM_SHA384
+	[1303]	TLS_CHACHA20_POLY1305_SHA256
+	[C02B]	TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+	[C02F]	TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+	[C02C]	TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+	[C030]	TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	[CCA9]	TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
+	[CCA8]	TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
+	[C013]	TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+	[C014]	TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
+	[009C]	TLS_RSA_WITH_AES_128_GCM_SHA256
+	[009D]	TLS_RSA_WITH_AES_256_GCM_SHA384
+	[002F]	TLS_RSA_WITH_AES_128_CBC_SHA
+	[0035]	TLS_RSA_WITH_AES_256_CBC_SHA
+
+Compression: 
+	[00]	NO_COMPRESSION
+
+

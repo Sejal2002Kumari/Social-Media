@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Konnectz</title>
+    <title>Search</title>
     <link rel="stylesheet" href="css/cssofhomepage.css" ></head>
 
 <body>
@@ -28,12 +28,13 @@
                 <div class="latestPost">Latest Post</div>
             </div>
             <div class="content" id="divContent">
-                <b class="heading">Users</b>
+                <!-- <b class="heading">Users</b> -->
                 <br />
                 <span class="contentHeading"></span>
-                
-                <div id="divContentInner"></div>
-                <div id="divContentPaging"></div>
+                <div id="divContentUser"></div>
+                <br><br>
+                <!-- <b class="heading">POSTS</b> -->
+                <div id="divContentPost"></div>
             </div>
             <div class="clear"></div>
         </div>
@@ -46,9 +47,10 @@
     </div>
     <script src="/js/main.js" type="text/javascript"></script>
     <script type="text/javascript">
-        GetUsers("/user");
-        GetUserFullDetails();
-        GetLatestPostsByUserId();
+        // GetUsers("/user");
+        // GetUserFullDetails();
+        // GetLatestPostsByUserId();
+        searchFun();
     </script>
 </body>
 

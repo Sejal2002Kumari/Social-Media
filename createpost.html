@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Post</title>
+    <link rel="stylesheet" href="css/createpost.css" />
+  </head>
+  <body>
+    <form class="form">
+      <div class="form-div">
+        <div class="title-form">
+          <h1 class="title-span">CREATE POST</h1>
+        </div>
+        <div class="belowTitle">
+          <div class="ID">
+            <div class="commonClass"><label for="id">ID:</label></div>
+            <input type="hidden" id="id" class="commanInput" required />
+          </div>
+          <div class="image">
+            <div class="commonClass">
+              <label for="image-id">CHOOSE FILE:</label>
+            </div>
+            <input
+              type="file"
+              name="image"
+              id="image-id"
+              class="commanInput"
+              required
+            />
+          </div>
+          <div class="likes">
+            <div class="commonClass"><label for="likes">LIKES:</label></div>
+            <input
+              type="number"
+              name="number"
+              id="likes"
+              class="commanInput"
+              required
+            />
+          </div>
+          <div class="tittle">
+            <div class="commonClass">
+              <label for="tittle-id">TITTLE:</label>
+            </div>
+            <input
+              type="tittle-id"
+              id="tittle-id"
+              class="commanInput"
+              required
+            />
+          </div>
+          <div class="firstName">
+            <div class="commonClass">
+              <label for="first-name">FIRST NAME:</label>
+            </div>
+            <input type="text" id="first-name" class="commanInput" required />
+          </div>
+          <div class="lastName">
+            <div class="commonClass">
+              <label for="last-name">LAST NAME:</label>
+            </div>
+            <input type="text" id="last-name" class="commanInput" required />
+          </div>
+          <div class="publishDate">
+            <div class="commonClass">
+              <label for="publish-date">PUBLISH DATE:</label>
+            </div>
+            <input type="date" id="publish-date" class="commanInput" required />
+          </div>
+          <div class="tag">
+            <div class="commonClass"><label for="tag-id">TAG:</label></div>
+            <textarea id="tag-id" cols="100" rows="10" required></textarea>
+          </div>
+          <div class="comment">
+            <div class="commonClass">
+              <label for="comment-id">COMMENT:</label>
+            </div>
+            <textarea id="comment-id" cols="100" rows="10" required></textarea>
+          </div>
+          <div class="button">
+            <button type="reset" id="reset">CLEAR</button>
+            <button type="submit" id="submit"  onclick="createUserPost(event)">POST</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <script>
+      function createUserPost(e) {
+         e.preventDefault();
+        var userPost = {
+          id: document.getElementById("id").value,
+          image:document.getElementById("image-id").value,
+          likes:document.getElementById("likes").value,
+          firstName:document.getElementById("first-name").value,
+          lastName:document.getElementById("last-name").value,
+          picture:document.getElementById("image-id").value,
+          title:document.getElementById("tittle-id").value,
+          publishDate:document.getElementById("publish-date").value,
+          // tag:document.getElementById("tag-id").innerText,
+          // tag:document.getElementById("tag-id").innerText,
+          // tag:document.getElementById("tag-id").innerText,
+          tags:document.getElementById("tag-id").value.split("\n"),
+          text:document.getElementById("comment-id").value,
+          owner:"60d0fe4f5311236168a109ca"
+        };
+               console.log(userPost,"fgghjkll");
+        submitPostDetails(userPost);
+
+      }
+          function submitPostDetails(userPost) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://dummyapi.io/data/v1/user/create",true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.setRequestHeader("app-id", "6162f14d095cf47ceaaa0ed0");
+        xhr.setRequestHeader("Access-Control-Allow-Origin", "http://127.0.0.1:5501");
+        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+        xhr.setRequestHeader("Accept", "*/*");
+
+        xhr.onreadystatechange = ()=>{ //callback method 
+            onreadystate(xhr);
+        };
+        xhr.onerror = ()=>{ //error method 
+          onError(xhr);
+        }
+        xhr.send(userPost); //server call 
+      }
+      function onreadystate(xhr) {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+          console.log(xhr.responseText,"------onready---------",xhr);
+        }
+      }
+      function onError(xhr) {
+         console.log(xhr,"...error.......................");
+      }
+    </script>
+  </body>
+</html>
+

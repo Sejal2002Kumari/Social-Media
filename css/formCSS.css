@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: monospace;
+  font-weight: 700;
+  color: #555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ecf0f3;
+}
+.clear {
+  clear: both;
+}
+.form {
+  margin: 40px;
+  width: 80%;
+  background-color: #ecf0f3;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+  border-radius: 40px;
+}
+.create-account {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+.createAccount {
+  font-size: 40px;
+  box-shadow: 8px 8px 8px #cbced1;
+  padding: 10px;
+  border-radius: 14px;
+  margin-top: 13px;
+  background-color: navy;
+  color: #fff;
+}
+.formDiv {
+  text-align: center;
+}
+
+#choose-image {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+#tittle-id,
+#fname,
+#lname,
+#emailID,
+#Dob,
+#city,
+#country,
+#state,
+#street,
+#time,
+#phone-Number,
+#choose-image,
+#registration-date-time,
+#date-update,
+#date-update {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 18px;
+  color: #555;
+  border-radius: 25px;
+  box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+  padding: 16px;
+  width: 70%;
+}
+.common-class-lebel {
+  text-align: left;
+  margin-left: 160px;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.gender {
+  box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+  width: 72%;
+  border-radius: 25px;
+  margin-left: 150px;
+}
+#genderButton {
+  text-align: center;
+  align-items: center;
+  height: 50px;
+}
+.button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  height: 60px;
+  border-radius: 40px;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: cursive;
+  color: #fff;
+  text-align: center;
+  background-color: navy;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  letter-spacing: 4px;
+  box-shadow: 4px 4px 4px #b1b1b1, -4px -4px 4px #ffffff;
+}
+.button:hover {
+  border: 4px solid whitesmoke;
+}
+.button:active {
+  background-color: blue;
+}

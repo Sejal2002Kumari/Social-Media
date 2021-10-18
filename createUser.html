@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Form</title>
+    <link rel="stylesheet" href="css/formCSS.css" />
+  </head>
+  <body>
+    <form class="form">
+      <div class="create-account">
+        <span class="createAccount">CREATE ACCOUNT</span>
+      </div>
+      <div class="formDiv">
+        <div class="common-class-lebel">
+          <input type="hidden" id="id" placeholder="Id" required />
+        </div>
+        <div class="common-class-lebel">
+          <label for="emailID">TITLE:</label>
+        </div>
+        <div class="tittle">
+          <select name="tittle" id="tittle-id">
+            <option value="choose">Select Tittle</option>
+            <option value="mr">Mr.</option>
+            <option value="ms">Ms.</option>
+            <option value="mrs">Mrs.</option>
+          </select>
+        </div>
+        <div class="common-class-lebel">
+          <label for="emailID">FIRST NAME:</label>
+        </div>
+        <div class="firstName">
+          <input type="text" id="fname" placeholder="First Name" required />
+        </div>
+        <div class="common-class-lebel">
+          <label for="emailID">LAST NAME:</label>
+        </div>
+        <div class="lastName">
+          <input type="text" id="lname" placeholder="Last Name" required />
+        </div>
+        <div class="clear"></div>
+        <div class="common-class-lebel">
+          <label for="emailID">GENDER:</label>
+        </div>
+        <div class="gender" id="gender" class="common-class-lebel">
+          <input
+            type="radio"
+            id="genderButton"
+            name="selectGender"
+            value="Male"
+            required
+          />
+          <label for="emailID">MALE:</label>
+          <input
+            type="radio"
+            id="genderButton"
+            name="selectGender"
+            value="Female"
+            required
+          />
+          <label for="emailID">FEMAL:</label>
+        </div>
+        <div class="clear"></div>
+        <div class="dateOfBirth">
+          <div class="common-class-lebel">
+            <label for="Dob">DATE OF BIRTH:</label>
+          </div>
+
+          <input type="date" name="DOB" id="Dob" required />
+        </div>
+        <div class="clear"></div>
+        <div class="emailId">
+          <div class="common-class-lebel">
+            <label for="emailID">EMAIL:</label>
+          </div>
+          <input
+            type="email"
+            name="email"
+            id="emailID"
+            required
+            placeholder="Email ID"
+          />
+        </div>
+        <div>
+          <div class="common-class-lebel">
+            <label for="time">TIME ZONE:</label>
+          </div>
+          <input type="time" id="time" />
+        </div>
+        <div class="clear"></div>
+        <div class="location">
+          <div class="common-class-lebel">
+            <label for="emailID">CITY:</label>
+          </div>
+          <input type="text" id="city" placeholder="City" />
+          <div class="common-class-lebel">
+            <label for="emailID">COUNTRY:</label>
+          </div>
+          <input type="text" id="country" placeholder="Country" />
+          <div class="common-class-lebel">
+            <label for="emailID">STATE:</label>
+          </div>
+          <input type="text" id="state" placeholder="State" />
+          <div class="common-class-lebel">
+            <label for="emailID">STREET:</label>
+          </div>
+          <input type="text" id="street" placeholder="Street" />
+        </div>
+
+        <div class="phoneNumber">
+          <div class="common-class-lebel">
+            <label for="emailID">PHONE NUMBER:</label>
+          </div>
+          <input
+            type="tel"
+            name="number"
+            id="phone-Number"
+            placeholder="Phone Number"
+            required
+          />
+        </div>
+        <div class="chooseImage">
+          <div class="common-class-lebel">
+            <label for="emailID">CHOOSE FILE:</label>
+          </div>
+          <input type="file" id="choose-image" />
+        </div>
+        <div class="clear"></div>
+
+        <div class="registrationDate">
+          <div class="common-class-lebel">
+            <label for="emailID">REGISTRATION DATE:</label>
+          </div>
+          <input
+            type="date"
+            id="registration-date-time"
+            placeholder="Registration Date"
+          />
+        </div>
+        <div class="updateDate">
+          <div class="common-class-lebel">
+            <label for="emailID">UPDATE DATE:</label>
+          </div>
+          <input type="date" name="date" id="date-update" />
+        </div>
+        <div class="clear"></div>
+
+        <div class="buttons">
+          <button type="reset" class="button">CLEAR ALL</button>
+          <button
+            type="submit"
+            class="button"
+            onclick="createUserAccount(event)"
+          >
+            SUBMIT
+          </button>
+        </div>
+      </div>
+    </form>
+    <script>
+      function createUserAccount(e) {
+        e.preventDefault();
+        var userAccount = {
+          firstName: document.getElementById("fname").value,
+          lastName: document.getElementById("lname").value,
+          id: document.getElementById("id").value,
+          dateOfBirth: document.getElementById("Dob").value,
+          email: document.getElementById("emailID").value,
+          // loaction:document.getElementById("").value,
+          city: document.getElementById("city").value,
+          country: document.getElementById("country").value,
+          state: document.getElementById("state").value,
+          street: document.getElementById("street").value,
+          timezone: document.getElementById("time").value,
+          phone: document.getElementById("phone-Number").value,
+          picture: document.getElementById("choose-image").value,
+          registerDatee: document.getElementById("registration-date-time")
+            .value,
+          title: document.getElementById("tittle-id").value,
+          updatedDate: document.getElementById("date-update").value,
+        };
+        console.log(userAccount);
+        submitUserDetails(userAccount);
+      }
+
+      function submitUserDetails(userAccount) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://dummyapi.io/data/v1/user/create",true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.setRequestHeader("app-id", "6162f14d095cf47ceaaa0ed0");
+        xhr.setRequestHeader("Access-Control-Allow-Origin", "http://127.0.0.1:5501");
+        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+        xhr.setRequestHeader("Accept", "*/*");
+
+        xhr.onreadystatechange = ()=>{
+            onreadystate(xhr);
+        };
+        xhr.onerror = ()=>{
+          onError(xhr);
+        }
+        xhr.send(userAccount);
+      }
+      function onreadystate(xhr) {
+        if (this.readyState == 4 && this.status == 200) {
+          console.log(xhr.responseText,"------onready---------",xhr);
+        }
+      }
+      function onError(xhr) {
+         console.log(xhr,"...error.......................");
+      }
+    </script>
+  </body>
+</html>
